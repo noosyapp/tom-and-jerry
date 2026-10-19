@@ -1,0 +1,13 @@
+services:
+  tom-and-jerry:
+    build: .
+    image: tom-and-jerry
+    env_file: .env
+    environment:
+      # No display inside the container — always run the browser headless here.
+      TJ_HEADFUL: "false"
+    extra_hosts:
+      # Lets the container reach apps running on the host as host.docker.internal.
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./reports:/app/reports

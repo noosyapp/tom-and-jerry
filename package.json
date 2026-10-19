@@ -1,0 +1,30 @@
+{
+  "name": "tom-and-jerry",
+  "version": "0.1.0",
+  "description": "LLM-driven dynamic security testing for your own web apps. Tom attacks, Jerry monitors.",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.9",
+  "bin": {
+    "tom-and-jerry": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "check": "biome check .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "playwright": "1.64.1",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "latest",
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
